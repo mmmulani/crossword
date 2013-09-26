@@ -10,8 +10,9 @@
 
 @class MMCrossword;
 
-@interface MMCrosswordViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface MMCrosswordViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UIScrollView *gridScrollView;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (strong, nonatomic) MMCrossword *currentCrossword;

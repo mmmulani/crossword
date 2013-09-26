@@ -38,6 +38,9 @@
   [super viewDidLoad];
 
   [self.collectionView registerNib:[UINib nibWithNibName:@"MMCrosswordGridCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"CrosswordGridCell"];
+  NSUInteger width = self.currentCrossword.columns * 100 + (self.currentCrossword.columns - 1) * 5;
+  NSUInteger height = self.currentCrossword.rows * 100 + (self.currentCrossword.rows - 1) * 5;
+  self.gridScrollView.contentSize = CGSizeMake(width, height);
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,6 +72,13 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
   return CGSizeMake(100, 100);
+}
+
+#pragma mark - UIScrollViewDelegate methods
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+  return self.collectionView;
 }
 
 @end
