@@ -35,18 +35,13 @@
 
 - (void)loginButtonTapped
 {
+  self.loginButton.enabled = NO;
   [PFFacebookUtils logInWithPermissions:@[] block:^(PFUser *user, NSError *error) {
     NSLog(@"Logged in with user %@ and error %@", user, error);
     if (!error) {
       [((MMAppDelegate *)[UIApplication sharedApplication].delegate) loginCompleted];
     }
   }];
-}
-
-- (void)didReceiveMemoryWarning
-{
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
 }
 
 @end
