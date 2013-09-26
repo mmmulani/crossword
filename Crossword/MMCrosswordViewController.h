@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMCrosswordViewController : UIViewController
+@class MMCrossword;
+
+@interface MMCrosswordViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property (strong, nonatomic) MMCrossword *currentCrossword;
 
 @end

@@ -34,6 +34,7 @@
 		91298A6117F4C1EF009BE358 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A6017F4C1EF009BE358 /* SystemConfiguration.framework */; };
 		91298A6517F4C9F1009BE358 /* MMCrosswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91298A6317F4C9F1009BE358 /* MMCrosswordViewController.m */; };
 		91298A6617F4C9F1009BE358 /* MMCrosswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91298A6417F4C9F1009BE358 /* MMCrosswordViewController.xib */; };
+		91298A6917F4D0A8009BE358 /* MMCrossword.m in Sources */ = {isa = PBXBuildFile; fileRef = 91298A6817F4D0A8009BE358 /* MMCrossword.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		91298A6217F4C9F1009BE358 /* MMCrosswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCrosswordViewController.h; sourceTree = "<group>"; };
 		91298A6317F4C9F1009BE358 /* MMCrosswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCrosswordViewController.m; sourceTree = "<group>"; };
 		91298A6417F4C9F1009BE358 /* MMCrosswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMCrosswordViewController.xib; sourceTree = "<group>"; };
+		91298A6717F4D0A8009BE358 /* MMCrossword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCrossword.h; sourceTree = "<group>"; };
+		91298A6817F4D0A8009BE358 /* MMCrossword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCrossword.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				91298A4817F4C098009BE358 /* MMLoginViewController.m */,
 				91298A4917F4C098009BE358 /* MMLoginViewController.xib */,
 				91298A6217F4C9F1009BE358 /* MMCrosswordViewController.h */,
+				91298A6717F4D0A8009BE358 /* MMCrossword.h */,
+				91298A6817F4D0A8009BE358 /* MMCrossword.m */,
 				91298A6317F4C9F1009BE358 /* MMCrosswordViewController.m */,
 				91298A6417F4C9F1009BE358 /* MMCrosswordViewController.xib */,
 			);
@@ -302,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91298A6917F4D0A8009BE358 /* MMCrossword.m in Sources */,
 				91298A2917F4BFCF009BE358 /* MMAppDelegate.m in Sources */,
 				91298A6517F4C9F1009BE358 /* MMCrosswordViewController.m in Sources */,
 				91298A4A17F4C098009BE358 /* MMLoginViewController.m in Sources */,
