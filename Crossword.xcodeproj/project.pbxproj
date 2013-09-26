@@ -37,6 +37,7 @@
 		91298A6917F4D0A8009BE358 /* MMCrossword.m in Sources */ = {isa = PBXBuildFile; fileRef = 91298A6817F4D0A8009BE358 /* MMCrossword.m */; };
 		91298A6C17F4D2C2009BE358 /* MMCrosswordGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91298A6B17F4D2C2009BE358 /* MMCrosswordGridCell.m */; };
 		91298A6E17F4D306009BE358 /* MMCrosswordGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91298A6D17F4D306009BE358 /* MMCrosswordGridCell.xib */; };
+		91298A7117F4E969009BE358 /* MMLabelZoomable.m in Sources */ = {isa = PBXBuildFile; fileRef = 91298A7017F4E969009BE358 /* MMLabelZoomable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		91298A6A17F4D2C2009BE358 /* MMCrosswordGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCrosswordGridCell.h; sourceTree = "<group>"; };
 		91298A6B17F4D2C2009BE358 /* MMCrosswordGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCrosswordGridCell.m; sourceTree = "<group>"; };
 		91298A6D17F4D306009BE358 /* MMCrosswordGridCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMCrosswordGridCell.xib; sourceTree = "<group>"; };
+		91298A6F17F4E969009BE358 /* MMLabelZoomable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLabelZoomable.h; sourceTree = "<group>"; };
+		91298A7017F4E969009BE358 /* MMLabelZoomable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLabelZoomable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +98,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91298A5B17F4C1DC009BE358 /* QuartzCore.framework in Frameworks */,
 				91298A6117F4C1EF009BE358 /* SystemConfiguration.framework in Frameworks */,
 				91298A5F17F4C1E8009BE358 /* StoreKit.framework in Frameworks */,
 				91298A5D17F4C1E2009BE358 /* Security.framework in Frameworks */,
-				91298A5B17F4C1DC009BE358 /* QuartzCore.framework in Frameworks */,
 				91298A5917F4C1D5009BE358 /* MobileCoreServices.framework in Frameworks */,
 				91298A5717F4C1C8009BE358 /* libz.1.1.3.dylib in Frameworks */,
 				91298A5517F4C1C0009BE358 /* CoreLocation.framework in Frameworks */,
@@ -184,6 +187,8 @@
 				91298A6317F4C9F1009BE358 /* MMCrosswordViewController.m */,
 				91298A6417F4C9F1009BE358 /* MMCrosswordViewController.xib */,
 				91298A6D17F4D306009BE358 /* MMCrosswordGridCell.xib */,
+				91298A6F17F4E969009BE358 /* MMLabelZoomable.h */,
+				91298A7017F4E969009BE358 /* MMLabelZoomable.m */,
 			);
 			path = Crossword;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91298A7117F4E969009BE358 /* MMLabelZoomable.m in Sources */,
 				91298A6917F4D0A8009BE358 /* MMCrossword.m in Sources */,
 				91298A2917F4BFCF009BE358 /* MMAppDelegate.m in Sources */,
 				91298A6C17F4D2C2009BE358 /* MMCrosswordGridCell.m in Sources */,
