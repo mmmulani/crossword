@@ -10,6 +10,7 @@
 
 #import "MMAppDelegate.h"
 #import "MMLoginViewController.h"
+#import "MMCrosswordViewController.h"
 
 @implementation MMAppDelegate
 
@@ -22,10 +23,7 @@
   // Override point for customization after application launch.
   self.window.backgroundColor = [UIColor whiteColor];
 
-  UINavigationController *navigationController = [UINavigationController new];
-  [navigationController setNavigationBarHidden:YES];
-  self.window.rootViewController = navigationController;
-  [navigationController pushViewController:[[MMLoginViewController alloc] init] animated:NO];
+  self.window.rootViewController = [MMLoginViewController new];
 
   [self.window makeKeyAndVisible];
   return YES;
@@ -37,6 +35,12 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
   return [PFFacebookUtils handleOpenURL:url];
+}
+
+- (void)loginCompleted
+{
+  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[MMCrosswordViewController new]];
+  self.window.rootViewController = navigationController;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -32,6 +32,8 @@
 		91298A5D17F4C1E2009BE358 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A5C17F4C1E2009BE358 /* Security.framework */; };
 		91298A5F17F4C1E8009BE358 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A5E17F4C1E8009BE358 /* StoreKit.framework */; };
 		91298A6117F4C1EF009BE358 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A6017F4C1EF009BE358 /* SystemConfiguration.framework */; };
+		91298A6517F4C9F1009BE358 /* MMCrosswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91298A6317F4C9F1009BE358 /* MMCrosswordViewController.m */; };
+		91298A6617F4C9F1009BE358 /* MMCrosswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91298A6417F4C9F1009BE358 /* MMCrosswordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,9 @@
 		91298A5C17F4C1E2009BE358 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		91298A5E17F4C1E8009BE358 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		91298A6017F4C1EF009BE358 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		91298A6217F4C9F1009BE358 /* MMCrosswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCrosswordViewController.h; sourceTree = "<group>"; };
+		91298A6317F4C9F1009BE358 /* MMCrosswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCrosswordViewController.m; sourceTree = "<group>"; };
+		91298A6417F4C9F1009BE358 /* MMCrosswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMCrosswordViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +168,9 @@
 				91298A4717F4C098009BE358 /* MMLoginViewController.h */,
 				91298A4817F4C098009BE358 /* MMLoginViewController.m */,
 				91298A4917F4C098009BE358 /* MMLoginViewController.xib */,
+				91298A6217F4C9F1009BE358 /* MMCrosswordViewController.h */,
+				91298A6317F4C9F1009BE358 /* MMCrosswordViewController.m */,
+				91298A6417F4C9F1009BE358 /* MMCrosswordViewController.xib */,
 			);
 			path = Crossword;
 			sourceTree = "<group>";
@@ -273,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91298A4B17F4C098009BE358 /* MMLoginViewController.xib in Resources */,
+				91298A6617F4C9F1009BE358 /* MMCrosswordViewController.xib in Resources */,
 				91298A2317F4BFCF009BE358 /* InfoPlist.strings in Resources */,
 				91298A2B17F4BFCF009BE358 /* Images.xcassets in Resources */,
 			);
@@ -294,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91298A2917F4BFCF009BE358 /* MMAppDelegate.m in Sources */,
+				91298A6517F4C9F1009BE358 /* MMCrosswordViewController.m in Sources */,
 				91298A4A17F4C098009BE358 /* MMLoginViewController.m in Sources */,
 				91298A2517F4BFCF009BE358 /* main.m in Sources */,
 			);

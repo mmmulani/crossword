@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 
 #import "MMLoginViewController.h"
+#import "MMAppDelegate.h"
 
 @interface MMLoginViewController ()
 
@@ -36,6 +37,9 @@
 {
   [PFFacebookUtils logInWithPermissions:@[] block:^(PFUser *user, NSError *error) {
     NSLog(@"Logged in with user %@ and error %@", user, error);
+    if (!error) {
+      [((MMAppDelegate *)[UIApplication sharedApplication].delegate) loginCompleted];
+    }
   }];
 }
 
