@@ -10,4 +10,15 @@
 
 @implementation MMCrossword
 
+- (BOOL)isCellBlackAtRow:(NSUInteger)row column:(NSUInteger)column
+{
+  return [[self characterAtRow:row column:column] isEqualToString:@"."];
+}
+
+- (NSString *)characterAtRow:(NSUInteger)row column:(NSUInteger)column
+{
+  unichar character = [self.gridString characterAtIndex:(row * self.columns + column)];
+  return [NSString stringWithCharacters:&character length:1];
+}
+
 @end

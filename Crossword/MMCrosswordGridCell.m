@@ -9,6 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "MMCrosswordGridCell.h"
+#import "MMCrossword.h"
 
 @implementation MMCrosswordGridCell
 
@@ -19,6 +20,12 @@
 
     }
     return self;
+}
+
+- (void)updateWithInfoFromCrossword:(MMCrossword *)crossword row:(NSUInteger)row column:(NSUInteger)column
+{
+  self.backgroundColor = [crossword isCellBlackAtRow:row column:column] ? [UIColor blackColor] : [UIColor whiteColor];
+  self.letterLabel.text = [crossword characterAtRow:row column:column];
 }
 
 @end

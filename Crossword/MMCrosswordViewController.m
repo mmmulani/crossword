@@ -8,6 +8,7 @@
 
 #import "MMCrosswordViewController.h"
 #import "MMCrossword.h"
+#import "MMCrosswordGridCell.h"
 
 @interface MMCrosswordViewController ()
 
@@ -24,6 +25,7 @@
   self.currentCrossword = [MMCrossword new];
   self.currentCrossword.rows = 15;
   self.currentCrossword.columns = 15;
+  self.currentCrossword.gridString = @"BALL.DOZEN.HALFEPEE.IRATE.IDEASIAMESECAT.GMACTENON.SHIPSHAPE..INTO..LATENT.WON.EDYS.YER...EGG.RIOTS.SEGERSLOB.CLOCK.DODITENOR.KOALA.TAN...LUV.DRUM.OMG.SCOTIA..MILS..DEATHSTAR.GALOPAGRI.IAMACAMERAYULE.TRACY.PEERSEAS.SIDED.SPOT";
 
   return self;
 }
@@ -38,8 +40,8 @@
   [super viewDidLoad];
 
   [self.collectionView registerNib:[UINib nibWithNibName:@"MMCrosswordGridCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"CrosswordGridCell"];
-  NSUInteger width = self.currentCrossword.columns * 100 + (self.currentCrossword.columns - 1) * 5;
-  NSUInteger height = self.currentCrossword.rows * 100 + (self.currentCrossword.rows - 1) * 5;
+  NSUInteger width = self.currentCrossword.columns * 60 + (self.currentCrossword.columns - 1) * 5;
+  NSUInteger height = self.currentCrossword.rows * 60 + (self.currentCrossword.rows - 1) * 5;
   self.collectionView.frame = CGRectMake(0, 0, width, height);
   self.gridScrollView.contentSize = CGSizeMake(width, height);
 }
@@ -63,8 +65,9 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-  UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"CrosswordGridCell" forIndexPath:indexPath];
-  cell.backgroundColor = [UIColor whiteColor];
+  MMCrosswordGridCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"CrosswordGridCell" forIndexPath:indexPath];
+  NSUInteger itemNumber = indexPath.row;
+  [cell updateWithInfoFromCrossword:self.currentCrossword row:(itemNumber / self.currentCrossword.columns) column:(itemNumber % self.currentCrossword.columns)];
   return cell;
 }
 
@@ -72,7 +75,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-  return CGSizeMake(100, 100);
+  return CGSizeMake(60, 60);
 }
 
 #pragma mark - UIScrollViewDelegate methods

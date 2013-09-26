@@ -12,5 +12,9 @@
 
 @property NSUInteger rows;
 @property NSUInteger columns;
+@property NSString *gridString;
+
+- (BOOL)isCellBlackAtRow:(NSUInteger)row column:(NSUInteger)column;
+- (NSString *)characterAtRow:(NSUInteger)row column:(NSUInteger)column;
 
 @end
