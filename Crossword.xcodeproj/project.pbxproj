@@ -428,7 +428,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/mehdi/Development/Crossword,
+					.,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crossword/Crossword-Prefix.pch";
@@ -445,7 +445,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/mehdi/Development/Crossword,
+					.,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crossword/Crossword-Prefix.pch";
@@ -516,6 +516,7 @@
 				91298A4317F4BFD0009BE358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		91298A4417F4BFD0009BE358 /* Build configuration list for PBXNativeTarget "CrosswordTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +525,7 @@
 				91298A4617F4BFD0009BE358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
