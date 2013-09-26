@@ -13,8 +13,10 @@
 @property NSUInteger rows;
 @property NSUInteger columns;
 @property NSString *gridString;
+@property NSArray *gridNumbers;
 
 - (BOOL)isCellBlackAtRow:(NSUInteger)row column:(NSUInteger)column;
 - (NSString *)characterAtRow:(NSUInteger)row column:(NSUInteger)column;
+- (NSNumber *)gridNumberAtRow:(NSUInteger)row column:(NSUInteger)column;
 
 @end

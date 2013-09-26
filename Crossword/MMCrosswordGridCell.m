@@ -26,6 +26,8 @@
 {
   self.backgroundColor = [crossword isCellBlackAtRow:row column:column] ? [UIColor blackColor] : [UIColor whiteColor];
   self.letterLabel.text = [crossword characterAtRow:row column:column];
+  NSNumber *gridNumber = [crossword gridNumberAtRow:row column:column];
+  self.gridNumberLabel.text = [gridNumber isEqualToNumber:@0] ? @"" : [gridNumber stringValue];
 }
 
 @end

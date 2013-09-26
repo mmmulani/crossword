@@ -26,6 +26,7 @@
   self.currentCrossword.rows = 15;
   self.currentCrossword.columns = 15;
   self.currentCrossword.gridString = @"BALL.DOZEN.HALFEPEE.IRATE.IDEASIAMESECAT.GMACTENON.SHIPSHAPE..INTO..LATENT.WON.EDYS.YER...EGG.RIOTS.SEGERSLOB.CLOCK.DODITENOR.KOALA.TAN...LUV.DRUM.OMG.SCOTIA..MILS..DEATHSTAR.GALOPAGRI.IAMACAMERAYULE.TRACY.PEERSEAS.SIDED.SPOT";
+  self.currentCrossword.gridNumbers = @[@1, @2, @3, @4, @0, @5, @6, @7, @8, @9, @0, @10, @11, @12, @13, @14, @0, @0, @0, @0, @15, @0, @0, @0, @0, @0, @16, @0, @0, @0, @17, @0, @0, @0, @18, @0, @0, @0, @0, @0, @0, @19, @0, @0, @0, @20, @0, @0, @0, @0, @0, @21, @0, @0, @0, @22, @0, @0, @0, @0, @0, @0, @23, @0, @0, @24, @0, @0, @25, @0, @0, @0, @0, @0, @0, @26, @27, @0, @0, @28, @0, @29, @30, @0, @31, @0, @0, @0, @0, @0, @32, @0, @0, @0, @33, @0, @0, @0, @34, @0, @35, @0, @36, @37, @38, @39, @0, @0, @40, @0, @41, @0, @0, @0, @42, @0, @43, @0, @0, @0, @44, @0, @0, @0, @45, @0, @46, @0, @0, @0, @47, @0, @48, @0, @0, @0, @0, @0, @49, @0, @50, @0, @51, @0, @0, @0, @0, @52, @0, @0, @0, @53, @54, @0, @0, @0, @55, @0, @0, @56, @0, @57, @0, @0, @0, @58, @0, @0, @0, @0, @0, @0, @59, @60, @0, @61, @0, @0, @62, @63, @64, @0, @0, @0, @0, @65, @0, @0, @0, @66, @0, @0, @0, @0, @0, @67, @0, @0, @0, @0, @68, @0, @0, @0, @0, @0, @69, @0, @0, @0, @70, @0, @0, @0, @0, @71, @0, @0, @0, @0, @0, @72, @0, @0, @0];
 
   return self;
 }
@@ -48,8 +49,8 @@
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UICollectionViewDataSource methods

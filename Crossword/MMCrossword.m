@@ -21,4 +21,9 @@
   return [NSString stringWithCharacters:&character length:1];
 }
 
+- (NSNumber *)gridNumberAtRow:(NSUInteger)row column:(NSUInteger)column;
+{
+  return self.gridNumbers[row * self.columns + column];
+}
+
 @end
