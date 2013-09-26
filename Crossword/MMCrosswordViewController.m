@@ -82,11 +82,4 @@
   return self.collectionView;
 }
 
-- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale
-{
-  [self.collectionView.visibleCells enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-    ((UIView *)obj).layer.contentsScale = scale;
-  }];
-}
-
 @end
