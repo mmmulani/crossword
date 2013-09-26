@@ -23,7 +23,7 @@
   // Override point for customization after application launch.
   self.window.backgroundColor = [UIColor whiteColor];
 
-  self.window.rootViewController = [MMLoginViewController new];
+  self.window.rootViewController = [MMCrosswordViewController new];
 
   [self.window makeKeyAndVisible];
   return YES;
