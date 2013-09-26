@@ -37,7 +37,7 @@
 {
   [super viewDidLoad];
 
-  [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"CrosswordGridCell"];
+  [self.collectionView registerNib:[UINib nibWithNibName:@"MMCrosswordGridCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"CrosswordGridCell"];
 }
 
 - (void)didReceiveMemoryWarning

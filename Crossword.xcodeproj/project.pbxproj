@@ -35,6 +35,8 @@
 		91298A6517F4C9F1009BE358 /* MMCrosswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91298A6317F4C9F1009BE358 /* MMCrosswordViewController.m */; };
 		91298A6617F4C9F1009BE358 /* MMCrosswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91298A6417F4C9F1009BE358 /* MMCrosswordViewController.xib */; };
 		91298A6917F4D0A8009BE358 /* MMCrossword.m in Sources */ = {isa = PBXBuildFile; fileRef = 91298A6817F4D0A8009BE358 /* MMCrossword.m */; };
+		91298A6C17F4D2C2009BE358 /* MMCrosswordGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91298A6B17F4D2C2009BE358 /* MMCrosswordGridCell.m */; };
+		91298A6E17F4D306009BE358 /* MMCrosswordGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91298A6D17F4D306009BE358 /* MMCrosswordGridCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,9 @@
 		91298A6417F4C9F1009BE358 /* MMCrosswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMCrosswordViewController.xib; sourceTree = "<group>"; };
 		91298A6717F4D0A8009BE358 /* MMCrossword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCrossword.h; sourceTree = "<group>"; };
 		91298A6817F4D0A8009BE358 /* MMCrossword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCrossword.m; sourceTree = "<group>"; };
+		91298A6A17F4D2C2009BE358 /* MMCrosswordGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCrosswordGridCell.h; sourceTree = "<group>"; };
+		91298A6B17F4D2C2009BE358 /* MMCrosswordGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCrosswordGridCell.m; sourceTree = "<group>"; };
+		91298A6D17F4D306009BE358 /* MMCrosswordGridCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMCrosswordGridCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,9 +178,12 @@
 				91298A4917F4C098009BE358 /* MMLoginViewController.xib */,
 				91298A6217F4C9F1009BE358 /* MMCrosswordViewController.h */,
 				91298A6717F4D0A8009BE358 /* MMCrossword.h */,
+				91298A6A17F4D2C2009BE358 /* MMCrosswordGridCell.h */,
+				91298A6B17F4D2C2009BE358 /* MMCrosswordGridCell.m */,
 				91298A6817F4D0A8009BE358 /* MMCrossword.m */,
 				91298A6317F4C9F1009BE358 /* MMCrosswordViewController.m */,
 				91298A6417F4C9F1009BE358 /* MMCrosswordViewController.xib */,
+				91298A6D17F4D306009BE358 /* MMCrosswordGridCell.xib */,
 			);
 			path = Crossword;
 			sourceTree = "<group>";
@@ -288,6 +296,7 @@
 				91298A4B17F4C098009BE358 /* MMLoginViewController.xib in Resources */,
 				91298A6617F4C9F1009BE358 /* MMCrosswordViewController.xib in Resources */,
 				91298A2317F4BFCF009BE358 /* InfoPlist.strings in Resources */,
+				91298A6E17F4D306009BE358 /* MMCrosswordGridCell.xib in Resources */,
 				91298A2B17F4BFCF009BE358 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +318,7 @@
 			files = (
 				91298A6917F4D0A8009BE358 /* MMCrossword.m in Sources */,
 				91298A2917F4BFCF009BE358 /* MMAppDelegate.m in Sources */,
+				91298A6C17F4D2C2009BE358 /* MMCrosswordGridCell.m in Sources */,
 				91298A6517F4C9F1009BE358 /* MMCrosswordViewController.m in Sources */,
 				91298A4A17F4C098009BE358 /* MMLoginViewController.m in Sources */,
 				91298A2517F4BFCF009BE358 /* main.m in Sources */,
