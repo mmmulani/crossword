@@ -19,6 +19,19 @@
 		91298A3417F4BFD0009BE358 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A1C17F4BFCF009BE358 /* UIKit.framework */; };
 		91298A3C17F4BFD0009BE358 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91298A3A17F4BFD0009BE358 /* InfoPlist.strings */; };
 		91298A3E17F4BFD0009BE358 /* CrosswordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91298A3D17F4BFD0009BE358 /* CrosswordTests.m */; };
+		91298A4A17F4C098009BE358 /* MMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91298A4817F4C098009BE358 /* MMLoginViewController.m */; };
+		91298A4B17F4C098009BE358 /* MMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91298A4917F4C098009BE358 /* MMLoginViewController.xib */; };
+		91298A4D17F4C164009BE358 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A4C17F4C164009BE358 /* Parse.framework */; };
+		91298A4F17F4C182009BE358 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A4E17F4C181009BE358 /* FacebookSDK.framework */; };
+		91298A5117F4C1AA009BE358 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A5017F4C1AA009BE358 /* AudioToolbox.framework */; };
+		91298A5317F4C1B0009BE358 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A5217F4C1B0009BE358 /* CFNetwork.framework */; };
+		91298A5517F4C1C0009BE358 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A5417F4C1C0009BE358 /* CoreLocation.framework */; };
+		91298A5717F4C1C8009BE358 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A5617F4C1C8009BE358 /* libz.1.1.3.dylib */; };
+		91298A5917F4C1D5009BE358 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A5817F4C1D5009BE358 /* MobileCoreServices.framework */; };
+		91298A5B17F4C1DC009BE358 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A5A17F4C1DC009BE358 /* QuartzCore.framework */; };
+		91298A5D17F4C1E2009BE358 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A5C17F4C1E2009BE358 /* Security.framework */; };
+		91298A5F17F4C1E8009BE358 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A5E17F4C1E8009BE358 /* StoreKit.framework */; };
+		91298A6117F4C1EF009BE358 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A6017F4C1EF009BE358 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +61,20 @@
 		91298A3917F4BFD0009BE358 /* CrosswordTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrosswordTests-Info.plist"; sourceTree = "<group>"; };
 		91298A3B17F4BFD0009BE358 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		91298A3D17F4BFD0009BE358 /* CrosswordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrosswordTests.m; sourceTree = "<group>"; };
+		91298A4717F4C098009BE358 /* MMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLoginViewController.h; sourceTree = "<group>"; };
+		91298A4817F4C098009BE358 /* MMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLoginViewController.m; sourceTree = "<group>"; };
+		91298A4917F4C098009BE358 /* MMLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMLoginViewController.xib; sourceTree = "<group>"; };
+		91298A4C17F4C164009BE358 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		91298A4E17F4C181009BE358 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		91298A5017F4C1AA009BE358 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		91298A5217F4C1B0009BE358 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		91298A5417F4C1C0009BE358 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		91298A5617F4C1C8009BE358 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		91298A5817F4C1D5009BE358 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		91298A5A17F4C1DC009BE358 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		91298A5C17F4C1E2009BE358 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		91298A5E17F4C1E8009BE358 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		91298A6017F4C1EF009BE358 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +82,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91298A6117F4C1EF009BE358 /* SystemConfiguration.framework in Frameworks */,
+				91298A5F17F4C1E8009BE358 /* StoreKit.framework in Frameworks */,
+				91298A5D17F4C1E2009BE358 /* Security.framework in Frameworks */,
+				91298A5B17F4C1DC009BE358 /* QuartzCore.framework in Frameworks */,
+				91298A5917F4C1D5009BE358 /* MobileCoreServices.framework in Frameworks */,
+				91298A5717F4C1C8009BE358 /* libz.1.1.3.dylib in Frameworks */,
+				91298A5517F4C1C0009BE358 /* CoreLocation.framework in Frameworks */,
 				91298A1B17F4BFCF009BE358 /* CoreGraphics.framework in Frameworks */,
+				91298A5317F4C1B0009BE358 /* CFNetwork.framework in Frameworks */,
+				91298A5117F4C1AA009BE358 /* AudioToolbox.framework in Frameworks */,
+				91298A4F17F4C182009BE358 /* FacebookSDK.framework in Frameworks */,
 				91298A1D17F4BFCF009BE358 /* UIKit.framework in Frameworks */,
+				91298A4D17F4C164009BE358 /* Parse.framework in Frameworks */,
 				91298A1917F4BFCF009BE358 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +134,17 @@
 		91298A1717F4BFCF009BE358 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91298A6017F4C1EF009BE358 /* SystemConfiguration.framework */,
+				91298A5E17F4C1E8009BE358 /* StoreKit.framework */,
+				91298A5C17F4C1E2009BE358 /* Security.framework */,
+				91298A5A17F4C1DC009BE358 /* QuartzCore.framework */,
+				91298A5817F4C1D5009BE358 /* MobileCoreServices.framework */,
+				91298A5617F4C1C8009BE358 /* libz.1.1.3.dylib */,
+				91298A5417F4C1C0009BE358 /* CoreLocation.framework */,
+				91298A5217F4C1B0009BE358 /* CFNetwork.framework */,
+				91298A5017F4C1AA009BE358 /* AudioToolbox.framework */,
+				91298A4E17F4C181009BE358 /* FacebookSDK.framework */,
+				91298A4C17F4C164009BE358 /* Parse.framework */,
 				91298A1817F4BFCF009BE358 /* Foundation.framework */,
 				91298A1A17F4BFCF009BE358 /* CoreGraphics.framework */,
 				91298A1C17F4BFCF009BE358 /* UIKit.framework */,
@@ -111,6 +160,9 @@
 				91298A2817F4BFCF009BE358 /* MMAppDelegate.m */,
 				91298A2A17F4BFCF009BE358 /* Images.xcassets */,
 				91298A1F17F4BFCF009BE358 /* Supporting Files */,
+				91298A4717F4C098009BE358 /* MMLoginViewController.h */,
+				91298A4817F4C098009BE358 /* MMLoginViewController.m */,
+				91298A4917F4C098009BE358 /* MMLoginViewController.xib */,
 			);
 			path = Crossword;
 			sourceTree = "<group>";
@@ -220,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91298A4B17F4C098009BE358 /* MMLoginViewController.xib in Resources */,
 				91298A2317F4BFCF009BE358 /* InfoPlist.strings in Resources */,
 				91298A2B17F4BFCF009BE358 /* Images.xcassets in Resources */,
 			);
@@ -241,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91298A2917F4BFCF009BE358 /* MMAppDelegate.m in Sources */,
+				91298A4A17F4C098009BE358 /* MMLoginViewController.m in Sources */,
 				91298A2517F4BFCF009BE358 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +416,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mehdi/Development/Crossword,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crossword/Crossword-Prefix.pch";
 				INFOPLIST_FILE = "Crossword/Crossword-Info.plist";
@@ -375,6 +433,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mehdi/Development/Crossword,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crossword/Crossword-Prefix.pch";
 				INFOPLIST_FILE = "Crossword/Crossword-Info.plist";

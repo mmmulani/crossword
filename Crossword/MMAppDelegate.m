@@ -6,17 +6,37 @@
 //  Copyright (c) 2013 Mehdi Mulani. All rights reserved.
 //
 
+#import <Parse/Parse.h>
+
 #import "MMAppDelegate.h"
+#import "MMLoginViewController.h"
 
 @implementation MMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
+  [Parse setApplicationId:@"xHafTZYqXbr1y9ESBUdFrrJmWWvDrS7LNESRSwWi" clientKey:@"zySqFT59VqcfbljUDdoiuRBQH06TMrxhttXoiBx7"];
+  [PFFacebookUtils initializeFacebook];
+
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  // Override point for customization after application launch.
+  self.window.backgroundColor = [UIColor whiteColor];
+
+  UINavigationController *navigationController = [UINavigationController new];
+  [navigationController setNavigationBarHidden:YES];
+  self.window.rootViewController = navigationController;
+  [navigationController pushViewController:[[MMLoginViewController alloc] init] animated:NO];
+
+  [self.window makeKeyAndVisible];
+  return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+  return [PFFacebookUtils handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+  return [PFFacebookUtils handleOpenURL:url];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
