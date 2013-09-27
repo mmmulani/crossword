@@ -60,6 +60,10 @@
   return [self initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle mainBundle]];
 }
 
+- (BOOL)prefersStatusBarHidden {
+  return YES;
+}
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
