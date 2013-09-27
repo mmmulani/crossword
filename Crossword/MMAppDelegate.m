@@ -30,7 +30,7 @@
   [pusherChannel bindToEventNamed:@"client-letter_typed" handleWithBlock:^(PTPusherEvent *pusherEvent) {
     UIViewController *viewController = self.window.rootViewController;
     if ([viewController isKindOfClass:[MMCrosswordViewController class]]) {
-      [((MMCrosswordViewController *) viewController) didSolveCellAtRow:[pusherEvent.data[@"row"] integerValue] column:[pusherEvent.data[@"column"] integerValue]];
+      [((MMCrosswordViewController *) viewController) didSolveCellAtRow:[pusherEvent.data[@"row"] integerValue] column:[pusherEvent.data[@"column"] integerValue] sendUpdate:NO];
     }
   }];
 

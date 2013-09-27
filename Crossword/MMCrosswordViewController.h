@@ -28,6 +28,6 @@ typedef enum {
 
 @property (strong, nonatomic) MMCrossword *currentCrossword;
 
-- (void)didSolveCellAtRow:(NSUInteger)row column:(NSUInteger)column;
+- (void)didSolveCellAtRow:(NSUInteger)row column:(NSUInteger)column sendUpdate:(BOOL)sendUpdate;
 
 @end
