@@ -48,6 +48,11 @@
   return self;
 }
 
+- (void)updateGridWithProgress:(NSArray *)progress {
+  self.currentCrossword.gridProgress = [NSMutableArray arrayWithArray:progress];
+  [self.collectionView reloadData];
+}
+
 - (id)init
 {
   return [self initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle mainBundle]];

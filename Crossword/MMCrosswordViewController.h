@@ -23,6 +23,7 @@
 
 @property (strong, nonatomic) MMCrossword *currentCrossword;
 
+- (void)updateGridWithProgress:(NSArray *)progress;
 - (void)didSolveCellAtRow:(NSUInteger)row column:(NSUInteger)column sendUpdate:(BOOL)sendUpdate;
 
 @end

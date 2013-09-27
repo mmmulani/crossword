@@ -34,6 +34,22 @@
     }
   }];
 
+  [pusherChannel bindToEventNamed:@"client-needs_grid" handleWithBlock:^(PTPusherEvent *pusherEvent) {
+    UIViewController *viewController = self.window.rootViewController;
+    if ([viewController isKindOfClass:[MMCrosswordViewController class]]) {
+      [self.pusher sendEventNamed:@"client-send_grid"
+                             data:((MMCrosswordViewController *) viewController).currentCrossword.gridProgress
+                          channel:@"private-mmm_crossword_LOL"];
+    }
+  }];
+
+  [pusherChannel bindToEventNamed:@"client-send_grid" handleWithBlock:^(PTPusherEvent *pusherEvent) {
+    UIViewController *viewController = self.window.rootViewController;
+    if ([viewController isKindOfClass:[MMCrosswordViewController class]]) {
+      [((MMCrosswordViewController *) viewController) updateGridWithProgress:pusherEvent.data];
+    }
+  }];
+
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
   self.window.backgroundColor = [UIColor whiteColor];
@@ -60,6 +76,7 @@
 - (void)pusher:(PTPusher *)pusher connectionDidConnect:(PTPusherConnection *)connection
 {
   NSLog(@"Pusher connected!");
+  [pusher sendEventNamed:@"client-needs_grid" data:nil channel:@"private-mmm_crossword_LOL"];
 }
 
 - (void)pusher:(PTPusher *)pusher connection:(PTPusherConnection *)connection failedWithError:(NSError *)error
