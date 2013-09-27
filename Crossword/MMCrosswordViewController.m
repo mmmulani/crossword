@@ -170,7 +170,7 @@
   if ([letterToEnter isEqualToString:[self.currentCrossword characterAtRow:self.currentRow column:self.currentColumn]]) {
     [self didSolveCellAtRow:self.currentRow column:self.currentColumn sendUpdate:YES];
 
-    [self _selectCellAtRow:self.currentRow column:(self.currentColumn + 1)];
+    [self moveToNextCell];
   }
   return YES;
 }
@@ -196,6 +196,44 @@
   
   MMCrosswordGridCell *cell = (MMCrosswordGridCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:(row * self.currentCrossword.columns + column) inSection:0]];
   [cell updateWithInfoFromCrossword:self.currentCrossword row:row column:column];
+}
+
+- (void)moveToNextCell
+{
+  NSUInteger column = self.currentColumn;
+  NSUInteger row = self.currentRow;
+  if (self.currentOrientation == MMClueOrientationHorizontal) {
+    column++;
+    while (column >= self.currentCrossword.columns || [self.currentCrossword isCellBlackAtRow:row column:column]) {
+      if (column >= self.currentCrossword.columns) {
+        if (row == self.currentCrossword.rows - 1) {
+          // No possible move.
+          return;
+        }
+
+        row++;
+        column = 0;
+      } else {
+        column++;
+      }
+    }
+  } else if (self.currentOrientation == MMClueOrientationVertical) {
+    row++;
+    while (row >= self.currentCrossword.rows || [self.currentCrossword isCellBlackAtRow:row column:column]) {
+      if (row >= self.currentCrossword.rows) {
+        if (column == self.currentCrossword.columns - 1) {
+          // No possible move. copypasta.
+          return;
+        }
+
+        column++;
+        row = 0;
+      } else {
+        row++;
+      }
+    }
+  }
+  [self _selectCellAtRow:row column:column];
 }
 
 @end
