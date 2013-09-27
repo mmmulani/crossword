@@ -9,6 +9,8 @@
 #import "MMCrosswordViewController.h"
 #import "MMCrossword.h"
 #import "MMCrosswordGridCell.h"
+#import "MMAppDelegate.h"
+#import "PTPusher.h"
 
 @interface MMCrosswordViewController ()
 
@@ -166,13 +168,32 @@
   NSLog(@"Letter to enter is %@, correct letter is %@", letterToEnter, [self.currentCrossword characterAtRow:self.currentRow column:self.currentColumn]);
 
   if ([letterToEnter isEqualToString:[self.currentCrossword characterAtRow:self.currentRow column:self.currentColumn]]) {
-    [self.currentCrossword markCellSolvedAtRow:self.currentRow column:self.currentColumn];
-    MMCrosswordGridCell *cell = (MMCrosswordGridCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:(self.currentRow * self.currentCrossword.columns + self.currentColumn) inSection:0]];
-    [cell updateWithInfoFromCrossword:self.currentCrossword row:self.currentRow column:self.currentColumn];
+    [self didSolveCellAtRow:self.currentRow column:self.currentColumn];
 
     [self _selectCellAtRow:self.currentRow column:(self.currentColumn + 1)];
   }
   return YES;
+}
+
+#pragma mark - Updating the board
+
+- (void)didSolveCellAtRow:(NSUInteger)row column:(NSUInteger)column
+{
+  if ([self.currentCrossword isCellSolvedAtRow:row column:column]) {
+    return;
+  }
+
+  [self.currentCrossword markCellSolvedAtRow:self.currentRow column:self.currentColumn];
+
+  NSDictionary *pusherData =
+  @{
+    @"row": @(row),
+    @"column": @(column),
+    };
+  [((MMAppDelegate *)[UIApplication sharedApplication].delegate).pusher sendEventNamed:@"client-letter_typed" data:pusherData channel:@"private-mmm_crossword_LOL"];
+  
+  MMCrosswordGridCell *cell = (MMCrosswordGridCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:(self.currentRow * self.currentCrossword.columns + self.currentColumn) inSection:0]];
+  [cell updateWithInfoFromCrossword:self.currentCrossword row:self.currentRow column:self.currentColumn];
 }
 
 @end

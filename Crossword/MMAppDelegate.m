@@ -8,6 +8,8 @@
 
 #import <Parse/Parse.h>
 #import "PTPusher.h"
+#import "PTPusherChannel.h"
+#import "PTPusherEvent.h"
 
 #import "MMAppDelegate.h"
 #import "MMLoginViewController.h"
@@ -21,6 +23,16 @@
   [PFFacebookUtils initializeFacebook];
 
   self.pusher = [PTPusher pusherWithKey:@"9a681f8753bc79535b23" delegate:self encrypted:NO];
+  self.pusher.authorizationURL = [NSURL URLWithString:@"http://pusher.herokuapp.com/auth/private"];
+  [self.pusher connect];
+
+  PTPusherChannel *pusherChannel = [self.pusher subscribeToChannelNamed:@"private-mmm_crossword_LOL"];
+  [pusherChannel bindToEventNamed:@"client-letter_typed" handleWithBlock:^(PTPusherEvent *pusherEvent) {
+    UIViewController *viewController = self.window.rootViewController;
+    if ([viewController isKindOfClass:[MMCrosswordViewController class]]) {
+      [((MMCrosswordViewController *) viewController) didSolveCellAtRow:[pusherEvent.data[@"row"] integerValue] column:[pusherEvent.data[@"column"] integerValue]];
+    }
+  }];
 
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
