@@ -100,14 +100,16 @@
   NSUInteger column = itemNumber % self.currentCrossword.columns;
   NSUInteger row = itemNumber / self.currentCrossword.columns;
 
-  // Switch orientation if they tap on the current spot.
-  if (column == self.currentColumn && row == self.currentRow) {
-    self.currentOrientation = !self.currentOrientation;
-    [self collectionView:self.collectionView didDeselectItemAtIndexPath:indexPath];
-    [self _selectCellAtRow:row column:column];
-  } else if ([self.hiddenTextField isFirstResponder]) {
-    [collectionView deselectItemAtIndexPath:indexPath animated:NO];
-    [self.hiddenTextField resignFirstResponder];
+  if ([self.hiddenTextField isFirstResponder]) {
+    // Switch orientation if they tap on the current spot.
+    if (column == self.currentColumn && row == self.currentRow) {
+      self.currentOrientation = !self.currentOrientation;
+      [self collectionView:self.collectionView didDeselectItemAtIndexPath:indexPath];
+      [self _selectCellAtRow:row column:column];
+    } else {
+      [collectionView deselectItemAtIndexPath:indexPath animated:NO];
+      [self.hiddenTextField resignFirstResponder];
+    }
   } else {
     [self.hiddenTextField becomeFirstResponder];
     [self _selectCellAtRow:row column:column];
@@ -203,6 +205,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
   if (!self.isCenteringCell && [self.hiddenTextField isFirstResponder]) {
     [self.hiddenTextField resignFirstResponder];
+    [self collectionView:self.collectionView didDeselectItemAtIndexPath:[[self.collectionView indexPathsForSelectedItems] lastObject]];
     [self.collectionView deselectItemAtIndexPath:[[self.collectionView indexPathsForSelectedItems] lastObject] animated:YES];
   }
 }
