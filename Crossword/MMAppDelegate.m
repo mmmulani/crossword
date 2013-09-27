@@ -76,7 +76,6 @@
 - (void)pusher:(PTPusher *)pusher connectionDidConnect:(PTPusherConnection *)connection
 {
   NSLog(@"Pusher connected!");
-  [pusher sendEventNamed:@"client-needs_grid" data:nil channel:@"private-mmm_crossword_LOL"];
 }
 
 - (void)pusher:(PTPusher *)pusher connection:(PTPusherConnection *)connection failedWithError:(NSError *)error
@@ -87,6 +86,10 @@
 - (void)pusher:(PTPusher *)pusher connectionWillReconnect:(PTPusherConnection *)connection afterDelay:(NSTimeInterval)delay
 {
   NSLog(@"Pusher could not connect, will reconnect");
+}
+
+- (void)pusher:(PTPusher *)pusher didSubscribeToChannel:(PTPusherChannel *)channel {
+  [pusher sendEventNamed:@"client-needs_grid" data:@{} channel:@"private-mmm_crossword_LOL"];
 }
 
 @end
