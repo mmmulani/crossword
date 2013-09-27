@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMAppDelegate : UIResponder <UIApplicationDelegate>
+@protocol PTPusherDelegate;
+@class PTPusher;
+
+@interface MMAppDelegate : UIResponder <UIApplicationDelegate, PTPusherDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) PTPusher *pusher;
 
 - (void)loginCompleted;
 

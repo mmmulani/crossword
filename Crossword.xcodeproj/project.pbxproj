@@ -38,6 +38,8 @@
 		91298A6C17F4D2C2009BE358 /* MMCrosswordGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91298A6B17F4D2C2009BE358 /* MMCrosswordGridCell.m */; };
 		91298A6E17F4D306009BE358 /* MMCrosswordGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91298A6D17F4D306009BE358 /* MMCrosswordGridCell.xib */; };
 		91298A7117F4E969009BE358 /* MMLabelZoomable.m in Sources */ = {isa = PBXBuildFile; fileRef = 91298A7017F4E969009BE358 /* MMLabelZoomable.m */; };
+		91298A7317F5002C009BE358 /* libPusher-combined.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A7217F5002C009BE358 /* libPusher-combined.a */; };
+		91298A8717F50060009BE358 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91298A8617F50060009BE358 /* libicucore.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,25 @@
 		91298A6D17F4D306009BE358 /* MMCrosswordGridCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMCrosswordGridCell.xib; sourceTree = "<group>"; };
 		91298A6F17F4E969009BE358 /* MMLabelZoomable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLabelZoomable.h; sourceTree = "<group>"; };
 		91298A7017F4E969009BE358 /* MMLabelZoomable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLabelZoomable.m; sourceTree = "<group>"; };
+		91298A7217F5002C009BE358 /* libPusher-combined.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPusher-combined.a"; sourceTree = "<group>"; };
+		91298A7517F50038009BE358 /* PTEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEventListener.h; sourceTree = "<group>"; };
+		91298A7617F50038009BE358 /* PTJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTJSON.h; sourceTree = "<group>"; };
+		91298A7717F50038009BE358 /* PTJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTJSONParser.h; sourceTree = "<group>"; };
+		91298A7817F50038009BE358 /* PTPusher+Testing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PTPusher+Testing.h"; sourceTree = "<group>"; };
+		91298A7917F50038009BE358 /* PTPusher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusher.h; sourceTree = "<group>"; };
+		91298A7A17F50038009BE358 /* PTPusherAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherAPI.h; sourceTree = "<group>"; };
+		91298A7B17F50038009BE358 /* PTPusherChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherChannel.h; sourceTree = "<group>"; };
+		91298A7C17F50038009BE358 /* PTPusherConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherConnection.h; sourceTree = "<group>"; };
+		91298A7D17F50038009BE358 /* PTPusherDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherDelegate.h; sourceTree = "<group>"; };
+		91298A7E17F50038009BE358 /* PTPusherErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherErrors.h; sourceTree = "<group>"; };
+		91298A7F17F50038009BE358 /* PTPusherEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherEvent.h; sourceTree = "<group>"; };
+		91298A8017F50038009BE358 /* PTPusherEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherEventDispatcher.h; sourceTree = "<group>"; };
+		91298A8117F50038009BE358 /* PTPusherEventPublisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherEventPublisher.h; sourceTree = "<group>"; };
+		91298A8217F50038009BE358 /* PTPusherMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherMacros.h; sourceTree = "<group>"; };
+		91298A8317F50038009BE358 /* PTPusherMockConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherMockConnection.h; sourceTree = "<group>"; };
+		91298A8417F50038009BE358 /* PTPusherPresenceChannelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPusherPresenceChannelDelegate.h; sourceTree = "<group>"; };
+		91298A8517F50038009BE358 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		91298A8617F50060009BE358 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91298A8717F50060009BE358 /* libicucore.dylib in Frameworks */,
 				91298A5B17F4C1DC009BE358 /* QuartzCore.framework in Frameworks */,
 				91298A6117F4C1EF009BE358 /* SystemConfiguration.framework in Frameworks */,
 				91298A5F17F4C1E8009BE358 /* StoreKit.framework in Frameworks */,
@@ -106,6 +128,7 @@
 				91298A5717F4C1C8009BE358 /* libz.1.1.3.dylib in Frameworks */,
 				91298A5517F4C1C0009BE358 /* CoreLocation.framework in Frameworks */,
 				91298A1B17F4BFCF009BE358 /* CoreGraphics.framework in Frameworks */,
+				91298A7317F5002C009BE358 /* libPusher-combined.a in Frameworks */,
 				91298A5317F4C1B0009BE358 /* CFNetwork.framework in Frameworks */,
 				91298A5117F4C1AA009BE358 /* AudioToolbox.framework in Frameworks */,
 				91298A4F17F4C182009BE358 /* FacebookSDK.framework in Frameworks */,
@@ -150,6 +173,9 @@
 		91298A1717F4BFCF009BE358 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91298A8617F50060009BE358 /* libicucore.dylib */,
+				91298A7417F50038009BE358 /* libPusher */,
+				91298A7217F5002C009BE358 /* libPusher-combined.a */,
 				91298A6017F4C1EF009BE358 /* SystemConfiguration.framework */,
 				91298A5E17F4C1E8009BE358 /* StoreKit.framework */,
 				91298A5C17F4C1E2009BE358 /* Security.framework */,
@@ -220,6 +246,31 @@
 				91298A3A17F4BFD0009BE358 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		91298A7417F50038009BE358 /* libPusher */ = {
+			isa = PBXGroup;
+			children = (
+				91298A7517F50038009BE358 /* PTEventListener.h */,
+				91298A7617F50038009BE358 /* PTJSON.h */,
+				91298A7717F50038009BE358 /* PTJSONParser.h */,
+				91298A7817F50038009BE358 /* PTPusher+Testing.h */,
+				91298A7917F50038009BE358 /* PTPusher.h */,
+				91298A7A17F50038009BE358 /* PTPusherAPI.h */,
+				91298A7B17F50038009BE358 /* PTPusherChannel.h */,
+				91298A7C17F50038009BE358 /* PTPusherConnection.h */,
+				91298A7D17F50038009BE358 /* PTPusherDelegate.h */,
+				91298A7E17F50038009BE358 /* PTPusherErrors.h */,
+				91298A7F17F50038009BE358 /* PTPusherEvent.h */,
+				91298A8017F50038009BE358 /* PTPusherEventDispatcher.h */,
+				91298A8117F50038009BE358 /* PTPusherEventPublisher.h */,
+				91298A8217F50038009BE358 /* PTPusherMacros.h */,
+				91298A8317F50038009BE358 /* PTPusherMockConnection.h */,
+				91298A8417F50038009BE358 /* PTPusherPresenceChannelDelegate.h */,
+				91298A8517F50038009BE358 /* SRWebSocket.h */,
+			);
+			name = libPusher;
+			path = headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,6 +506,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crossword/Crossword-Prefix.pch";
 				INFOPLIST_FILE = "Crossword/Crossword-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mehdi/Development/Crossword,
+				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -472,6 +528,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crossword/Crossword-Prefix.pch";
 				INFOPLIST_FILE = "Crossword/Crossword-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mehdi/Development/Crossword,
+				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

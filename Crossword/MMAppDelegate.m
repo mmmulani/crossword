@@ -7,6 +7,7 @@
 //
 
 #import <Parse/Parse.h>
+#import "PTPusher.h"
 
 #import "MMAppDelegate.h"
 #import "MMLoginViewController.h"
@@ -18,6 +19,8 @@
 {
   [Parse setApplicationId:@"xHafTZYqXbr1y9ESBUdFrrJmWWvDrS7LNESRSwWi" clientKey:@"zySqFT59VqcfbljUDdoiuRBQH06TMrxhttXoiBx7"];
   [PFFacebookUtils initializeFacebook];
+
+  self.pusher = [PTPusher pusherWithKey:@"9a681f8753bc79535b23" delegate:self encrypted:NO];
 
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
@@ -39,6 +42,22 @@
 - (void)loginCompleted
 {
   self.window.rootViewController = [MMCrosswordViewController new];
+}
+
+#pragma mark - PTPusherDelegate methods
+- (void)pusher:(PTPusher *)pusher connectionDidConnect:(PTPusherConnection *)connection
+{
+  NSLog(@"Pusher connected!");
+}
+
+- (void)pusher:(PTPusher *)pusher connection:(PTPusherConnection *)connection failedWithError:(NSError *)error
+{
+  NSLog(@"Pusher failed with error: %@", error);
+}
+
+- (void)pusher:(PTPusher *)pusher connectionWillReconnect:(PTPusherConnection *)connection afterDelay:(NSTimeInterval)delay
+{
+  NSLog(@"Pusher could not connect, will reconnect");
 }
 
 @end
