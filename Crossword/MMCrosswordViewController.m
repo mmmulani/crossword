@@ -104,12 +104,10 @@
     // Switch orientation if they tap on the current spot.
     if (column == self.currentColumn && row == self.currentRow) {
       self.currentOrientation = !self.currentOrientation;
-      [self collectionView:self.collectionView didDeselectItemAtIndexPath:indexPath];
-      [self _selectCellAtRow:row column:column];
-    } else {
-      [collectionView deselectItemAtIndexPath:indexPath animated:NO];
-      [self.hiddenTextField resignFirstResponder];
     }
+
+    [self collectionView:self.collectionView didDeselectItemAtIndexPath:indexPath];
+    [self _selectCellAtRow:row column:column];
   } else {
     [self.hiddenTextField becomeFirstResponder];
     [self _selectCellAtRow:row column:column];
