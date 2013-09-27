@@ -17,7 +17,7 @@
 @property CGRect keyboardFrame;
 @property BOOL isCenteringCell;
 
-- (void)keyboardDidChangeFrame:(NSNotification *)notification;
+- (void)keyboardWillChangeFrame:(NSNotification *)notification;
 - (void)centerOnSelectedCell;
 
 @end
@@ -74,6 +74,18 @@
 - (void)keyboardWillChangeFrame:(NSNotification *)notification {
   self.keyboardFrame = [self.view convertRect:[[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]
                                      fromView:nil];
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+  [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+
+  self.isCenteringCell = YES;
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+  [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+
+  [self centerOnSelectedCell];
 }
 
 #pragma mark - UICollectionViewDataSource methods
