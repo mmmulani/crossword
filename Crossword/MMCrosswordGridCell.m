@@ -13,13 +13,12 @@
 
 @implementation MMCrosswordGridCell
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
+- (void)awakeFromNib {
+  [super awakeFromNib];
 
-    }
-    return self;
+  UIView *backgroundView = [UIView new];
+  backgroundView.backgroundColor = [UIColor yellowColor];
+  self.selectedBackgroundView = backgroundView;
 }
 
 - (void)updateWithInfoFromCrossword:(MMCrossword *)crossword row:(NSUInteger)row column:(NSUInteger)column

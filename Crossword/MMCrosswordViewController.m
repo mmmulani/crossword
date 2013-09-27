@@ -74,12 +74,11 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
   if ([self.hiddenTextField isFirstResponder]) {
+    [collectionView deselectItemAtIndexPath:indexPath animated:NO];
     [self.hiddenTextField resignFirstResponder];
   } else {
     [self.hiddenTextField becomeFirstResponder];
   }
-
-  [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout methods
@@ -101,5 +100,7 @@
     [self.hiddenTextField resignFirstResponder];
   }
 }
+
+
 
 @end
