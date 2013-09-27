@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) IBOutlet UIScrollView *gridScrollView;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UITextField *hiddenTextField;
 
 @property (strong, nonatomic) MMCrossword *currentCrossword;
 

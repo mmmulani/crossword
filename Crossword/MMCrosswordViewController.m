@@ -72,6 +72,16 @@
   return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+  if ([self.hiddenTextField isFirstResponder]) {
+    [self.hiddenTextField resignFirstResponder];
+  } else {
+    [self.hiddenTextField becomeFirstResponder];
+  }
+
+  [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+}
+
 #pragma mark - UICollectionViewDelegateFlowLayout methods
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -84,6 +94,12 @@
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
   return self.collectionView;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  if ([self.hiddenTextField isFirstResponder]) {
+    [self.hiddenTextField resignFirstResponder];
+  }
 }
 
 @end
