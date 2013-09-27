@@ -278,12 +278,17 @@
   [self.currentCrossword markCellSolvedAtRow:row column:column];
   
   if (sendUpdate) {
+    PTPusher *pusher = ((MMAppDelegate *)[UIApplication sharedApplication].delegate).pusher;
+    if (!pusher.connection.isConnected) {
+      [pusher connect];
+    }
+
     NSDictionary *pusherData =
     @{
       @"row": @(row),
       @"column": @(column),
       };
-    [((MMAppDelegate *)[UIApplication sharedApplication].delegate).pusher sendEventNamed:@"client-letter_typed" data:pusherData channel:@"private-mmm_crossword_LOL"];
+    [pusher sendEventNamed:@"client-letter_typed" data:pusherData channel:@"private-mmm_crossword_LOL"];
   }
   
   MMCrosswordGridCell *cell = (MMCrosswordGridCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:(row * self.currentCrossword.columns + column) inSection:0]];
