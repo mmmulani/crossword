@@ -44,6 +44,7 @@
                         </collectionView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="contentInset" minX="30" minY="30" maxX="30" maxY="30"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="R9G-Qr-XY4"/>
                     </connections>
