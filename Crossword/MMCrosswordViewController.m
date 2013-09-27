@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Mehdi Mulani. All rights reserved.
 //
 
+#import <AudioToolbox/AudioServices.h>
+
 #import "MMCrosswordViewController.h"
 #import "MMCrossword.h"
 #import "MMCrosswordGridCell.h"
@@ -63,6 +65,7 @@
   [super viewDidLoad];
 
   self.clueLabel.layer.cornerRadius = 5.0f;
+  self.clueLabel.layer.backgroundColor = [UIColor yellowColor].CGColor;
   [self.collectionView registerNib:[UINib nibWithNibName:@"MMCrosswordGridCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"CrosswordGridCell"];
   NSUInteger width = self.currentCrossword.columns * 60 + (self.currentCrossword.columns - 1) * 5;
   NSUInteger height = self.currentCrossword.rows * 60 + (self.currentCrossword.rows - 1) * 5;
@@ -269,6 +272,18 @@
     [self didSolveCellAtRow:self.currentRow column:self.currentColumn sendUpdate:YES];
 
     [self moveToNextCell];
+  } else {
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    MMCrosswordGridCell *cell = (MMCrosswordGridCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:(self.currentRow * self.currentCrossword.columns + self.currentColumn) inSection:0]];
+    [UIView animateWithDuration:0.1f animations:^{
+      self.clueLabel.layer.backgroundColor = [UIColor redColor].CGColor;
+      cell.selectedBackgroundView.backgroundColor = [UIColor redColor];
+    } completion:^(BOOL finished) {
+      [UIView animateWithDuration:0.3f animations:^{
+        self.clueLabel.layer.backgroundColor = [UIColor yellowColor].CGColor;
+        cell.selectedBackgroundView.backgroundColor = [UIColor yellowColor];
+      }];
+    }];
   }
   return YES;
 }
