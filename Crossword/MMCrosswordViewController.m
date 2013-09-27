@@ -179,8 +179,14 @@
     CGPoint contentOffset = cell.frame.origin;
 
     self.gridScrollView.zoomScale = 1.0f;
-    contentOffset.x -= 45;
-    contentOffset.y -= self.keyboardFrame.origin.y - 60 - self.gridScrollView.frame.origin.y - 30;
+    contentOffset.x -= floorf(self.gridScrollView.bounds.size.width / 2.0f) - 30;
+
+    if (self.currentOrientation == MMClueOrientationHorizontal) {
+      contentOffset.y -= self.keyboardFrame.origin.y - 60 - self.gridScrollView.frame.origin.y - 30;
+    } else {
+      contentOffset.y -= floorf(self.keyboardFrame.origin.y / 2) - 40;
+    }
+
     contentOffset.x = MIN(self.gridScrollView.contentSize.width - self.gridScrollView.bounds.size.width + 30, contentOffset.x);
     contentOffset.x = MAX(-30, contentOffset.x);
     contentOffset.y = MAX(-30, contentOffset.y);
