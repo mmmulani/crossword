@@ -100,7 +100,10 @@
   NSUInteger column = itemNumber % self.currentCrossword.columns;
   NSUInteger row = itemNumber / self.currentCrossword.columns;
 
-  if ([self.hiddenTextField isFirstResponder]) {
+  if ([self.currentCrossword isCellBlackAtRow:row column:column]) {
+    [self.hiddenTextField resignFirstResponder];
+    [collectionView deselectItemAtIndexPath:indexPath animated:NO];
+  } else if ([self.hiddenTextField isFirstResponder]) {
     // Switch orientation if they tap on the current spot.
     if (column == self.currentColumn && row == self.currentRow) {
       self.currentOrientation = !self.currentOrientation;
