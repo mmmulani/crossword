@@ -225,6 +225,7 @@
     contentOffset.x = MIN(self.gridScrollView.contentSize.width - self.gridScrollView.bounds.size.width + 30, contentOffset.x);
     contentOffset.x = MAX(-30, contentOffset.x);
     contentOffset.y = MAX(-30, contentOffset.y);
+    contentOffset.y = MIN(self.gridScrollView.contentSize.height - self.gridScrollView.bounds.size.height + 30 + self.keyboardFrame.size.height + self.clueLabel.bounds.size.height, contentOffset.y);
     self.gridScrollView.contentOffset = contentOffset;
     self.isCenteringCell = NO;
   }];
