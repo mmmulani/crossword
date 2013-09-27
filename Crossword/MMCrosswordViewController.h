@@ -11,7 +11,6 @@
 @class MMCrossword;
 
 typedef enum {
-  MMClueOrientationUnknown,
   MMClueOrientationVertical,
   MMClueOrientationHorizontal,
 } MMClueOrientation;

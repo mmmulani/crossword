@@ -40,6 +40,8 @@
     [self.currentCrossword.gridProgress addObject:@NO];
   }
   self.currentOrientation = MMClueOrientationHorizontal;
+  self.currentRow = NSUIntegerMax;
+  self.currentColumn = NSUIntegerMax;
 
   return self;
 }
@@ -94,15 +96,57 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-  if ([self.hiddenTextField isFirstResponder]) {
+  NSUInteger itemNumber = indexPath.row;
+  NSUInteger column = itemNumber % self.currentCrossword.columns;
+  NSUInteger row = itemNumber / self.currentCrossword.columns;
+
+  // Switch orientation if they tap on the current spot.
+  if (column == self.currentColumn && row == self.currentRow) {
+    self.currentOrientation = !self.currentOrientation;
+    [self collectionView:self.collectionView didDeselectItemAtIndexPath:indexPath];
+    [self _selectCellAtRow:row column:column];
+  } else if ([self.hiddenTextField isFirstResponder]) {
     [collectionView deselectItemAtIndexPath:indexPath animated:NO];
     [self.hiddenTextField resignFirstResponder];
   } else {
     [self.hiddenTextField becomeFirstResponder];
-    NSUInteger itemNumber = indexPath.row;
-    NSUInteger column = itemNumber % self.currentCrossword.columns;
-    NSUInteger row = itemNumber / self.currentCrossword.columns;
     [self _selectCellAtRow:row column:column];
+  }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+  NSUInteger itemNumber = indexPath.row;
+  NSUInteger column = itemNumber % self.currentCrossword.columns;
+  NSUInteger row = itemNumber / self.currentCrossword.columns;
+  [self _highlightAroundRow:row column:column inDirection:MMClueOrientationHorizontal opposite:YES];
+  [self _highlightAroundRow:row column:column inDirection:MMClueOrientationVertical opposite:YES];
+}
+
+- (void)_highlightAroundRow:(NSInteger)row column:(NSInteger)column inDirection:(MMClueOrientation)orientation opposite:(BOOL)opposite
+{
+  NSInteger columnUpdate = orientation == MMClueOrientationHorizontal ? 1 : 0;
+  NSInteger rowUpdate = orientation == MMClueOrientationVertical ? 1 : 0;
+
+  // Find beginning of word.
+  while ((column - 1 * columnUpdate) >= 0 &&
+         (row - 1 * rowUpdate) >= 0 &&
+         ![self.currentCrossword isCellBlackAtRow:(row - 1 * rowUpdate) column:(column - 1 * columnUpdate)]) {
+    column -= columnUpdate;
+    row -= rowUpdate;
+  }
+
+  // Highlight until the end.
+  for (; column < self.currentCrossword.columns &&
+         row < self.currentCrossword.rows &&
+         ![self.currentCrossword isCellBlackAtRow:row column:column];
+       (column += columnUpdate, row += rowUpdate)) {
+    UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:(row * self.currentCrossword.columns + column) inSection:0]];
+    if (opposite) {
+      cell.backgroundColor = [UIColor whiteColor];
+    } else {
+      cell.backgroundColor = [UIColor grayColor];
+    }
   }
 }
 
@@ -114,6 +158,9 @@
   if ([self.hiddenTextField isFirstResponder]) {
     [self.collectionView deselectItemAtIndexPath:currentIndexPath animated:NO];
   }
+
+  [self _highlightAroundRow:self.currentRow column:self.currentColumn inDirection:self.currentOrientation opposite:YES];
+  [self _highlightAroundRow:row column:column inDirection:self.currentOrientation opposite:NO];
 
   [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:(row * self.currentCrossword.columns + column) inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
   self.currentRow = row;
