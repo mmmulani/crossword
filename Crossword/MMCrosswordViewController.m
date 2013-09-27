@@ -183,7 +183,7 @@
     return;
   }
 
-  [self.currentCrossword markCellSolvedAtRow:self.currentRow column:self.currentColumn];
+  [self.currentCrossword markCellSolvedAtRow:row column:column];
   
   if (sendUpdate) {
     NSDictionary *pusherData =
@@ -194,8 +194,8 @@
     [((MMAppDelegate *)[UIApplication sharedApplication].delegate).pusher sendEventNamed:@"client-letter_typed" data:pusherData channel:@"private-mmm_crossword_LOL"];
   }
   
-  MMCrosswordGridCell *cell = (MMCrosswordGridCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:(self.currentRow * self.currentCrossword.columns + self.currentColumn) inSection:0]];
-  [cell updateWithInfoFromCrossword:self.currentCrossword row:self.currentRow column:self.currentColumn];
+  MMCrosswordGridCell *cell = (MMCrosswordGridCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:(row * self.currentCrossword.columns + column) inSection:0]];
+  [cell updateWithInfoFromCrossword:self.currentCrossword row:row column:column];
 }
 
 @end
