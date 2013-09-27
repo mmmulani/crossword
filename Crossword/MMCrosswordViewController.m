@@ -12,6 +12,12 @@
 
 @interface MMCrosswordViewController ()
 
+@property CGRect keyboardFrame;
+@property BOOL isCenteringCell;
+
+- (void)keyboardDidChangeFrame:(NSNotification *)notification;
+- (void)centerOnSelectedCell;
+
 @end
 
 @implementation MMCrosswordViewController
@@ -52,6 +58,18 @@
   self.gridScrollView.contentSize = CGSizeMake(width, height);
 
   self.hiddenTextField.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(keyboardWillChangeFrame:)
+                                               name:UIKeyboardWillChangeFrameNotification
+                                             object:nil];
+}
+
+- (void)keyboardWillChangeFrame:(NSNotification *)notification {
+  self.keyboardFrame = [self.view convertRect:[[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]
+                                     fromView:nil];
 }
 
 #pragma mark - UICollectionViewDataSource methods
@@ -98,6 +116,25 @@
   [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:(row * self.currentCrossword.columns + column) inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
   self.currentRow = row;
   self.currentColumn = column;
+  [self centerOnSelectedCell];
+}
+
+- (void)centerOnSelectedCell {
+  UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:[[self.collectionView indexPathsForSelectedItems] lastObject]];
+
+  self.isCenteringCell = YES;
+  [UIView animateWithDuration:0.2f animations:^{
+    CGPoint contentOffset = cell.frame.origin;
+
+    self.gridScrollView.zoomScale = 1.0f;
+    contentOffset.x -= 60;
+    contentOffset.y -= self.gridScrollView.bounds.size.height - self.keyboardFrame.origin.y - 30;
+    contentOffset.x = MIN(self.gridScrollView.contentSize.width - self.gridScrollView.bounds.size.width + 30, contentOffset.x);
+    contentOffset.x = MAX(-30, contentOffset.x);
+    contentOffset.y = MAX(-30, contentOffset.y);
+    self.gridScrollView.contentOffset = contentOffset;
+    self.isCenteringCell = NO;
+  }];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout methods
@@ -115,7 +152,7 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-  if ([self.hiddenTextField isFirstResponder]) {
+  if (!self.isCenteringCell && [self.hiddenTextField isFirstResponder]) {
     [self.hiddenTextField resignFirstResponder];
     [self.collectionView deselectItemAtIndexPath:[[self.collectionView indexPathsForSelectedItems] lastObject] animated:YES];
   }
