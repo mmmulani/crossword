@@ -31,4 +31,9 @@
   return [self.gridProgress[row * self.columns + column] boolValue];
 }
 
+- (void)markCellSolvedAtRow:(NSUInteger)row column:(NSUInteger)column
+{
+  self.gridProgress[row * self.columns + column] = @YES;
+}
+
 @end

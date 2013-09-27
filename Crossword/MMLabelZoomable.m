@@ -33,8 +33,8 @@
   [super didMoveToWindow];
 
   CATiledLayer *layerForView = (CATiledLayer *)self.layer;
-  layerForView.levelsOfDetailBias = 1.0f;
-  layerForView.levelsOfDetail = 4.0f;
+  layerForView.levelsOfDetailBias = 2.0f;
+  layerForView.levelsOfDetail = 2.0f;
 }
 
 + (Class)layerClass

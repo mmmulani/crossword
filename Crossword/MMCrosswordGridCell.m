@@ -24,7 +24,11 @@
 - (void)updateWithInfoFromCrossword:(MMCrossword *)crossword row:(NSUInteger)row column:(NSUInteger)column
 {
   self.backgroundColor = [crossword isCellBlackAtRow:row column:column] ? [UIColor blackColor] : [UIColor whiteColor];
-  self.letterLabel.text = [crossword characterAtRow:row column:column];
+  if ([crossword isCellSolvedAtRow:row column:column]) {
+    self.letterLabel.text = [crossword characterAtRow:row column:column];
+  } else {
+    self.letterLabel.text = @"";
+  }
   NSNumber *gridNumber = [crossword gridNumberAtRow:row column:column];
   self.gridNumberLabel.text = [gridNumber isEqualToNumber:@0] ? @"" : [gridNumber stringValue];
 }
