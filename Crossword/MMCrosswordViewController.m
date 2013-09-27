@@ -158,10 +158,11 @@
 
     self.clueLabel.hidden = NO;
     self.clueLabel.text = [self.currentCrossword clueAtRow:row column:column direction:orientation];
-    [self.clueLabel sizeToFit];
     clueLabelFrame = self.clueLabel.frame;
+    clueLabelFrame.size = [self.clueLabel sizeThatFits:CGSizeMake(self.view.bounds.size.width - 60, 0.0f)];
     clueLabelFrame.size.width += 10;
     clueLabelFrame.origin.x = floorf((self.view.bounds.size.width - clueLabelFrame.size.width) / 2);
+    clueLabelFrame.origin.y = self.keyboardFrame.origin.y - clueLabelFrame.size.height - 10;
     self.clueLabel.frame = clueLabelFrame;
   }
 
