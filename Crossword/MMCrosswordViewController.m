@@ -157,7 +157,7 @@
     CGRect clueLabelFrame;
 
     self.clueLabel.hidden = NO;
-    self.clueLabel.text = @"Hello World";
+    self.clueLabel.text = [self.currentCrossword clueAtRow:row column:column direction:orientation];
     [self.clueLabel sizeToFit];
     clueLabelFrame = self.clueLabel.frame;
     clueLabelFrame.size.width += 10;
