@@ -21,9 +21,14 @@
   return [NSString stringWithCharacters:&character length:1];
 }
 
-- (NSNumber *)gridNumberAtRow:(NSUInteger)row column:(NSUInteger)column;
+- (NSNumber *)gridNumberAtRow:(NSUInteger)row column:(NSUInteger)column
 {
   return self.gridNumbers[row * self.columns + column];
+}
+
+- (BOOL)isCellSolvedAtRow:(NSUInteger)row column:(NSUInteger)column
+{
+  return [self.gridProgress[row * self.columns + column] boolValue];
 }
 
 @end

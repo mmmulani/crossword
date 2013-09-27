@@ -14,9 +14,11 @@
 @property NSUInteger columns;
 @property NSString *gridString;
 @property NSArray *gridNumbers;
+@property NSArray *gridProgress;
 
 - (BOOL)isCellBlackAtRow:(NSUInteger)row column:(NSUInteger)column;
 - (NSString *)characterAtRow:(NSUInteger)row column:(NSUInteger)column;
 - (NSNumber *)gridNumberAtRow:(NSUInteger)row column:(NSUInteger)column;
+- (BOOL)isCellSolvedAtRow:(NSUInteger)row column:(NSUInteger)column;
 
 @end
