@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *gridScrollView;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UITextField *hiddenTextField;
+@property (weak, nonatomic) IBOutlet UILabel *clueLabel;
 
 @property NSUInteger currentRow;
 @property NSUInteger currentColumn;

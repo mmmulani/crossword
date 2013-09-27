@@ -57,6 +57,7 @@
 {
   [super viewDidLoad];
 
+  self.clueLabel.layer.cornerRadius = 5.0f;
   [self.collectionView registerNib:[UINib nibWithNibName:@"MMCrosswordGridCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"CrosswordGridCell"];
   NSUInteger width = self.currentCrossword.columns * 60 + (self.currentCrossword.columns - 1) * 5;
   NSUInteger height = self.currentCrossword.rows * 60 + (self.currentCrossword.rows - 1) * 5;
@@ -74,8 +75,13 @@
 }
 
 - (void)keyboardWillChangeFrame:(NSNotification *)notification {
-  self.keyboardFrame = [self.view convertRect:[[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]
-                                     fromView:nil];
+  CGRect keyboardFrame = [self.view convertRect:[[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]
+                                       fromView:nil];
+  CGRect clueLabelFrame = self.clueLabel.frame;
+
+  clueLabelFrame.origin.y = keyboardFrame.origin.y - clueLabelFrame.size.height - 10;
+  self.clueLabel.frame = clueLabelFrame;
+  self.keyboardFrame = keyboardFrame;
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -145,6 +151,20 @@
   NSInteger columnUpdate = orientation == MMClueOrientationHorizontal ? 1 : 0;
   NSInteger rowUpdate = orientation == MMClueOrientationVertical ? 1 : 0;
 
+  if (opposite) {
+    self.clueLabel.hidden = YES;
+  } else {
+    CGRect clueLabelFrame;
+
+    self.clueLabel.hidden = NO;
+    self.clueLabel.text = @"Hello World";
+    [self.clueLabel sizeToFit];
+    clueLabelFrame = self.clueLabel.frame;
+    clueLabelFrame.size.width += 10;
+    clueLabelFrame.origin.x = floorf((self.view.bounds.size.width - clueLabelFrame.size.width) / 2);
+    self.clueLabel.frame = clueLabelFrame;
+  }
+
   // Find beginning of word.
   while ((column - 1 * columnUpdate) >= 0 &&
          (row - 1 * rowUpdate) >= 0 &&
@@ -196,7 +216,7 @@
     contentOffset.x -= floorf(self.gridScrollView.bounds.size.width / 2.0f) - 30;
 
     if (self.currentOrientation == MMClueOrientationHorizontal) {
-      contentOffset.y -= self.keyboardFrame.origin.y - 60 - self.gridScrollView.frame.origin.y - 30;
+      contentOffset.y -= self.keyboardFrame.origin.y - 60 - self.gridScrollView.frame.origin.y - 30 - self.clueLabel.bounds.size.height;
     } else {
       contentOffset.y -= floorf(self.keyboardFrame.origin.y / 2) - 40;
     }
