@@ -97,6 +97,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
   if ([self.hiddenTextField isFirstResponder]) {
     [self.hiddenTextField resignFirstResponder];
+    [self.collectionView deselectItemAtIndexPath:[[self.collectionView indexPathsForSelectedItems] lastObject] animated:YES];
   }
 }
 
