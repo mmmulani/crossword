@@ -8,12 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class MMCrossword;
-
-typedef enum {
-  MMClueOrientationVertical,
-  MMClueOrientationHorizontal,
-} MMClueOrientation;
+#import "MMCrossword.h"
 
 @interface MMCrosswordViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, UITextFieldDelegate>
 

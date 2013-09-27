@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+  MMClueOrientationVertical,
+  MMClueOrientationHorizontal,
+} MMClueOrientation;
+
 @interface MMCrossword : NSObject
 
 @property NSUInteger rows;
@@ -23,5 +28,6 @@
 - (NSNumber *)gridNumberAtRow:(NSUInteger)row column:(NSUInteger)column;
 - (BOOL)isCellSolvedAtRow:(NSUInteger)row column:(NSUInteger)column;
 - (void)markCellSolvedAtRow:(NSUInteger)row column:(NSUInteger)column;
+- (NSString *)clueAtRow:(NSInteger)row column:(NSInteger)column direction:(MMClueOrientation)orientation;
 
 @end

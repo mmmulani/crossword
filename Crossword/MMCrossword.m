@@ -36,4 +36,30 @@
   self.gridProgress[row * self.columns + column] = @YES;
 }
 
+- (NSString *)clueAtRow:(NSInteger)row column:(NSInteger)column direction:(MMClueOrientation)orientation
+{
+  NSNumber *clueNumber = @0;
+  if (orientation == MMClueOrientationVertical) {
+    while (row >= 0 && ![self isCellBlackAtRow:row column:column]) {
+      clueNumber = [self gridNumberAtRow:row column:column];
+      row--;
+    }
+  } else {
+    while (column >= 0 && ![self isCellBlackAtRow:row column:column]) {
+      clueNumber = [self gridNumberAtRow:row column:column];
+      column--;
+    }
+  }
+
+  NSArray *searchArray = orientation == MMClueOrientationHorizontal ? self.acrossClues : self.downClues;
+  NSString *searchString = [clueNumber.stringValue stringByAppendingString:@"."];
+  for (NSString *clue in searchArray) {
+    if ([[clue substringWithRange:NSMakeRange(0, searchString.length)] isEqualToString:searchString]) {
+      return clue;
+    }
+  }
+
+  return nil;
+}
+
 @end
