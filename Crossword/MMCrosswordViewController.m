@@ -77,9 +77,14 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:NO];
     [self.hiddenTextField resignFirstResponder];
   } else {
-    [self.hiddenTextField becomeFirstResponder];
+    if ([self.currentCrossword isCellBlackAtRow:(indexPath.row / self.currentCrossword.columns) column:(indexPath.row % self.currentCrossword.columns)]) {
+      [collectionView deselectItemAtIndexPath:indexPath animated:NO];
+    } else {
+      [self.hiddenTextField becomeFirstResponder];
+    }
   }
 }
+
 
 #pragma mark - UICollectionViewDelegateFlowLayout methods
 
