@@ -15,6 +15,8 @@
 @property NSString *gridString;
 @property NSArray *gridNumbers;
 @property NSMutableArray *gridProgress;
+@property NSArray *acrossClues;
+@property NSArray *downClues;
 
 - (BOOL)isCellBlackAtRow:(NSUInteger)row column:(NSUInteger)column;
 - (NSString *)characterAtRow:(NSUInteger)row column:(NSUInteger)column;
