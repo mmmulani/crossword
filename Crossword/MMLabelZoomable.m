@@ -32,14 +32,14 @@
 {
   [super didMoveToWindow];
 
-  CATiledLayer *layerForView = (CATiledLayer *)self.layer;
+  /*CATiledLayer *layerForView = (CATiledLayer *)self.layer;
   layerForView.levelsOfDetailBias = 2.0f;
-  layerForView.levelsOfDetail = 2.0f;
+  layerForView.levelsOfDetail = 2.0f;*/
 }
 
-+ (Class)layerClass
+/*+ (Class)layerClass
 {
   return [CATiledLayer class];
-}
+}*/
 
 @end
